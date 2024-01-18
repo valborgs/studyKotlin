@@ -42,6 +42,7 @@ fun main() {
     println("chk2 : $chk2")
     println("chk3 : $chk3")
 
+    println("-------------------------------------------")
     // 스마트 캐스팅 : 특정 조건을 만족하면 자동으로 형변환이 이루어지는 것을 의미한다.
     val obj6:SuperClass1 = SubClass1()
     // SubClass1부분이 있는지 검사한다.
@@ -49,12 +50,12 @@ fun main() {
     // 해당 타입으로 형변환 한 다음에 메서드나 프로퍼티를 호출하려고 하는 경우가 많다.
     // 이제 코틀린은 검사 대상 타입으로 변환까지 해준다.
 
-    // obj6.superMethod1() // 에러
-    if(obj6 is SuperClass1){
-        obj6.superMethod1()
+    // obj6.subMethod1() // 에러
+    if(obj6 is SubClass1){
+        obj6.subMethod1()
     }
     // 위의 if문이 끝나면 원래의 타입으로 돌아온다.
-    // obj6.superMethod1() // 에러
+    // obj6.subMethod1() // 에러
     
     // 매개변수가 Any인 함수 호출
     // Any는 모든 클래스의 최상위 부모이고 코틀린에서 기본 자료형(Int, Float..)도 사실 클래스임
